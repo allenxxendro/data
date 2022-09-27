@@ -1,0 +1,28 @@
+#PYHTON PROGRAM FOR QUEUE HANDLING:
+#ENQUEUE , DEQUEUE , DISPLAY:
+
+Queue=[]
+def enqueue():
+    ele=int(input("Enter the desired element:"))
+    Queue.append(ele)
+    print(ele,"The entered element is added")
+def dequeue():
+    if(len(Queue)==0):
+        print("The que is empty")
+    else:
+        ele=Queue.pop(0)
+        print("Removed the element from queue",ele)
+def display():
+    print(Queue)
+
+while True:
+    print("SELECT THE OEPRATION 1.add 2.remove 3.display 4.exit")
+    option=int(input("Enter the desired option:"))
+    if option==1:
+        enqueue()
+    elif option==2:
+        dequeue()
+    elif option==3:
+        display()
+    else:
+        print("Enter the correct number of option!!!!!!!!")

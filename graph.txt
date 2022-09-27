@@ -1,0 +1,50 @@
+g = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+
+def add_edge():
+    print("enter the age betwween two vertex")
+    f = int(input("egde start from: "))
+    e = int(input("egde end at: "))
+    g[f][e] = 1
+
+def add_vetex():
+    v = []
+    for i in range(len((g[0]))):
+        v.append(0)
+    g.append(v)
+    for k in range(len((g[0]))+1):
+        g[k].append(0)
+
+
+
+def find_edge():
+    f = int(input("egde start from: "))
+    e = int(input("egde end at: "))
+
+    if g[f][e] == 1:
+        print("yes, edge is present!")
+    
+    else:
+        print("edge is not present!")
+
+def display():
+    for i in range(len(g)):
+        for j in range(len(g)):
+            print(g[i][j], end="  ")
+        print()
+        print()
+
+print('-------------- 1.add edge 2.find edge 3.show graph 4.add vertex  5.quit ---------------')
+while True:
+    choice = int(input("select any one opration from above: "))
+    if choice == 1:
+        add_edge()
+    elif choice == 2:
+        find_edge()
+    elif choice == 3:
+        display()
+    elif choice == 4:
+        add_vetex()
+    elif choice == 5:
+        break
+    else:
+        print("enter the correct value")

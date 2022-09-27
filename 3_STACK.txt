@@ -1,0 +1,26 @@
+#IMPLEMENTATION OF STACK:
+s=[]
+def push(s,ele):
+    s.append(ele)
+    print("element added:")
+def pop(s):
+    if(len(s)==0):
+        print("Empty")
+    else:
+        s.pop()
+        print("popped")
+def isEmpty(s):
+    if(len(s)==0):
+        print("Empty")
+    else:
+        print("Not empty")
+def display(s):
+    print(s)
+#DRIVER CODE:-
+push(s,(100))
+push(s,(200))
+push(s,(300))
+display(s)
+pop(s)
+display(s)
+isEmpty(s)

@@ -1,0 +1,87 @@
+from calendar import month
+from datetime import date
+
+x = int(input("enter the year: "))
+def iny():
+    global y
+    y = int(input("enter the month: "))
+
+iny()
+while True:
+    if y>12:
+        print("month must be less than 12...... enter month agian")
+        iny()
+    else:
+        break
+def inz():
+    global z
+    z = int(input("enter the day: "))
+inz()
+while True:
+    if z>31:
+        print("day must be less than 31...... enter day agian")
+        iny()
+    else:
+        break
+today = date(x,y,z)
+
+print(today)
+
+while True:
+    day = today.day
+    month = today.month
+    year = today.year
+
+    if month == 12 and day == 31:
+        year += 1
+        month = 1
+        day = 1
+        print("tommarows date is", date(year,month,day))
+        print("------------happy new year---------------")
+        break
+
+    elif day == 31 :
+
+        month += 1
+        day = 1
+        print("tommarows date is", date(year,month,day))
+        break
+    elif day == 30:
+        if month == 4 or month == 6 or month == 9 or month == 11:
+            month += 1
+            day = 1
+            print("tommarows date is", date(year,month,day))
+            break
+        else:
+            day += 1
+            print("tommarows date is", date(year,month,day))
+            break
+    elif month == 2:
+        if year%4 == 0:
+            if day == 29:
+                month += 1
+                day = 1
+                print("tommarows date is", date(year,month,day))
+                break
+            else:
+                day += 1
+                print("tommarows date is", date(year,month,day))
+                break
+        elif day == 28:
+            month += 1
+            day = 1
+            print("tommarows date is", date(year,month,day))
+            break
+        else:
+            day += 1
+            print("tommarows date is", date(year,month,day))
+            break
+    
+
+
+    else:
+        day += 1
+        print("tommarows date is", date(year,month,day))
+        break
+
+    

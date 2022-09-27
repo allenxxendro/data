@@ -1,0 +1,45 @@
+#priotrity queue
+
+queue = []
+def add_element():
+    row = int(input("enter how many element you want: "))
+    for i in range(row):
+        element = []
+        e = int(input("enter the element: "))
+        element.append(e)
+        p = int(input("enter it's priority: "))
+        element.append(p)
+
+        queue.append(element)
+
+def sort():
+    for i in range(len(queue)):
+        temp = queue[i]
+        #print(temp)
+        for j in range(i+1,(len(queue))):
+            if queue[j][1] > temp[1]:
+                temp = queue[j]
+                #print("new",temp)
+
+            queue[i],queue[j] = temp,queue[i]
+
+def search():
+    ele = int(input("enter the number which you want to search: "))
+
+def delete():
+    queue.pop(0)
+    print("element remove successfully!")
+while True:
+    c = int(input("enter the choice: "))
+    if c == 1:
+        add_element()
+        sort()
+    elif c == 2:
+        search()
+    elif c == 5:
+         break
+    elif c == 3:
+        delete()
+    elif c == 4:
+        print(queue)
+

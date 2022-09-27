@@ -1,0 +1,46 @@
+def add_element():
+    ele = int(input("enter the number: "))
+    a = ele%10
+    htable.pop(a)
+    htable.insert(a,ele)
+         
+def display():
+    for i in range(len(htable)):
+        print(i, "  ",htable[i])
+def delete():
+    element = int(input("which number you want to delete: "))
+    b = element%10
+   
+    htable.pop(b)
+    htable.insert(b,0)
+            
+def search():
+    element = int(input("which number you want to search: "))
+    b = element%10
+    for i in range(b,len(htable)):
+        a = 0
+        if htable[i] == element:
+            a = 1
+            break
+
+    if a == 1:
+        print("element found in hashtable")
+    else:
+         print("element not found in hashtable")   
+#driver code
+htable = [0,0,0,0,0,0,0,0,0,0]
+print("*************************1.insert, 2.delete 3.display, 4.search, 5.exit************************")
+while True:
+    c = int(input("select option: "))
+    if c == 1:
+        add_element()
+    elif c == 2 :
+        delete()
+    elif c == 3:
+        display()
+    elif c == 4:
+        search()
+    elif c == 5:
+        break
+    else:
+        print("enter the correct option")

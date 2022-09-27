@@ -1,0 +1,79 @@
+#DOUBLY LINKED LIST:-
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.nref=None
+        self.pref=None
+class DoublyLL:
+    def __init__(self):
+        self.head=None
+    #Forward Traversing:
+    def TraverseF(self):
+        
+        if self.head is None:
+            print("Linked List is empty!")
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data,"<---",end=" ")
+                n = n.nref
+
+#Backward Traversing:
+    def TraverseB(self):
+        
+        if self.head is None:
+            print("Linked List is empty!")
+        else:
+            n = self.head
+            while n.nref is not None:
+                n = n.nref
+            while n is not None:
+                print(n.data,"---->",end=" ")
+                n = n.pref
+#PREPEND , APPEND:-
+    #IF THE LINKED LIST IS EMPTY
+    def insert_empty(self,data):
+        if self.head is None:
+            new_node=Node(data)
+            self.head=new_node
+        else:
+            print("Linked is not empty!!")
+    #IF THE LINKED LIST IS NOT EMPTY(PREPEND)
+    def prepend(self,data):
+        new_node=Node(data)
+        if self.head is None:
+            self.head=new_node
+        else:
+            new_node.nref=self.head
+            self.head.pref=new_node
+            self.head=new_node
+    #IF THE LINKED LIST IS NOT EMPTY(APPEND)
+    def append(self,data):
+        new_node=Node(data)
+        if self.head is None:
+            self.head=new_node
+        else:
+            n = self.head
+            while n.nref is not None:
+                n = n.nref
+            n.nref=new_node
+            new_node.pref=n
+#DELETION(three conditions 1)Empty , 2)single node , 3)contains more than one node):-
+    def delete(self):
+        if self.head is None:
+            print("The Linked List is empty cannot delete the element!!!!")
+            return
+        if self.head.nref is None:
+            self.head=None
+        else:
+            self.head=self.head.nref
+            self.pref=None
+            
+#Driver code:-   
+dl1 = DoublyLL()
+dl1.prepend(100)
+dl1.TraverseF()
+dl1.delete()
+dl1.TraverseF()
+dl1.TraverseB()
